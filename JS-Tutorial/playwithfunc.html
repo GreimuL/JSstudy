@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var ffunc = function(){
+                var output = prompt('number?','default');
+                alert(output);
+            };
+            alert(ffunc);
+            alert(alert);
+            ffunc();
+
+            function afunc(){
+                var a = 1;
+                var b = 2;
+                alert(a);
+            }
+            
+            afunc();
+
+            var aaf = function(){alert('testa')};
+            function aaf(){
+                alert('testb');
+            }
+
+            aaf();
+            alert('aaa','bbb');
+
+            var arr1 = Array();
+            var arr2 = Array(5);
+            var arr3 = Array(10,2,4,5);
+
+            alert(arr1);
+            alert(arr2);
+            alert(arr3);
+
+            function sumAll(){
+                var sum = 0;
+                for(var i in arguments){
+                    sum += Number(i);
+                }
+                return sum;
+            }
+            alert(sumAll(1,2,3,4,5,6,7,8,9,10));
+
+            function pytha(width,height){
+                function square(a){
+                    return a*a;
+                }
+                return Math.sqrt(square(width)+square(height));
+            }
+            alert(pytha(2,3));
+            function fivetimecall(callfunc){
+                for(var i = 0;i<5;i++){
+                    callfunc();
+                }
+            }
+            function abfunc(){
+                alert('123');
+            }
+            fivetimecall(abfunc);
+            fivetimecall(function(){
+                alert('33');
+            });
+
+            function test(name){
+                var output = 'hello'+name;
+                return function(){
+                    alert(output);
+                };
+            }
+            var test1 = test('asdf');
+            test1();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

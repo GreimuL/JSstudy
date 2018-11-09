@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            for(var i =0;i<5;i++){
+                alert("asdf");
+            }
+            var array = [1,2,3,4,5,6];
+            alert(array[3]);
+            var arr =[{},'asdf',['a','b']];
+            alert(arr);
+            var aA = [0,1,2,3,5];
+            alert(aA.length);
+
+            var val = 0;
+            var sttime = new Date().getTime();
+
+            while(new Date().getTime()<sttime + 1000){
+                val++;
+            }
+            alert(val);
+
+            var stt = new Date().getTime();
+            for(var CPS = 0; new Date().getTime()<stt + 1000; CPS++){
+                alert(CPS);
+            }
+
+            var fiarr = [1,2,3,4,5];
+            for(var i in fiarr){
+                alert(fiarr[i]);
+            }
+
+            var outstr = '';
+            var input = prompt('number?','default');
+            
+            for(var i=0;i<input;i++){
+                for(var j=0;j<=i;j++){
+                    outstr += '*';
+                }
+                outstr += '\n';
+            }
+            alert(outstr);
+
+            
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

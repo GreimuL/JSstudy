@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var product ={
+                name : 'product',
+                asdww : 'abcd',
+                sadf : 'sdf'
+            };
+
+            alert(product.name);
+
+            var person = {
+                name : 'naaame',
+                eat: function(food){
+                    alert('eat'+food);
+                }
+            };
+
+            person.eat('something');
+
+            var obj = {
+                name : 'obj',
+                aaaa : 'babb',
+                language : 'js'
+            };
+
+            var output='';
+            for(var key in obj){
+                output+= '-'+key+': '+obj[key]+'\n';
+            }
+            alert(output);
+            
+            var output2= '';
+            var std = {
+                name : 'student',
+                score : 100,
+                asdf : 123123
+            };
+            alert(('name' in std));
+
+            var output3 = '';
+            with(std){
+                output3 += name;
+                output3 += score;
+            }
+            alert(output3);
+
+            var testcrash='';
+            var testc = {
+                name : 'test',
+                testcrash : '123'
+            };
+            with(testc){
+                testcrash+=name;
+                window.testcrash += testcrash+name;
+                alert(testcrash);
+            }
+            alert(testcrash);
+
+            var da = {};
+            da.name = 'asdf';
+            da.score = 123;
+            alert(da.name);
+            da.dafunc = function(){
+                alert("fwfwffw");
+            }
+            da.dafunc();
+            for(var key in da){
+                alert(key + da[key]);
+            }
+
+            delete(da.name);
+            for(var key in da){
+                alert(key + da[key]);
+            }
+
+
+            var studentscore =[];
+            studentscore.push({name: 'a',score: 100});            
+            studentscore.push({name: 'b',score: 99});          
+            studentscore.push({name: 'c',score: 88});           
+            studentscore.push({name: 'd',score: 66});          
+            studentscore.push({name: 'e',score: 77});
+
+            for(var i in studentscore){
+                studentscore[i].retscore = function(){
+                    return this.score;
+                }
+                studentscore[i].retname = function(){
+                    return this.name;
+                }
+            }
+
+            var stout = '';
+            for(var i in studentscore){
+                stout += 'name:'
+                stout += studentscore[i].retname();
+                stout+= 'score:';
+                stout+=studentscore[i].retscore();
+                stout+='\n';
+            }
+            alert(stout);
+            
+            function faststinfo(na,sc){
+                var retinfo = {
+                    name : na,
+                    score : sc,
+
+                    getName : function(){
+                        return this.name;
+                    },
+                    getScore : function(){
+                        return this.score;
+                    }
+                };
+                return retinfo;
+            }
+
+            var faststd = [];
+            faststd.push(faststinfo('abc',100));
+            faststd.push(faststinfo('def',95));
+
+            var outfaststd = '';
+            for(var i in faststd){
+                outfaststd+=faststd[i].getName();
+                outfaststd+=faststd[i].getScore()+'\n';
+            }
+            alert(outfaststd);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            alert('123');
+            setTimeout(function(){
+                alert('3초');
+            },3000);
+            
+            var intid = setInterval(function(){
+                alert('<p>'+new Date()+'</p>');
+            },1000);
+
+            clearInterval(intid);
+            alert('a');
+            setTimeout(function(){
+                alert('when');
+            });
+            alert('b');
+            alert('c');
+
+            for(var i =0 ;i<3;i++){
+                (function(ii){setTimeout(function(){alert(ii);},0);})(i);
+            }
+
+            var arr = [6,7,8,9];
+            arr.forEach(function(i){
+                setTimeout(function(){
+                    alert(i);
+                },0);
+            });
+
+            var URI = 'https://www.naver.com';
+            var output = '';
+            output+='escape()\n';
+            output += escape(URI)+'\n';
+            output+='encodeURI\n';
+            output+=encodeURI(URI)+'\n';
+            output+='encodeURIComp\n';
+            output+=encodeURIComponent(URI);
+            alert(output);
+
+            var willEval ='';
+            willEval += 'var number = 10;';
+            willEval += 'alert(number);';
+            eval(willEval);
+
+            var strtofloat = '1234.1234ㅁㄴㅇㄹ';
+            alert(parseFloat(strtofloat));
+            alert(parseInt(strtofloat));
+            alert(parseInt('4',2));
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
